@@ -35,3 +35,12 @@ $("#add-train").on("click", function (event) {
 
 // I need to display recent input to the Current Train Schedule
 
+dataRef.ref().on("child_added", function(childSnapshot){
+    console.log(childSnapshot.val().trainName);
+    console.log(childSnapshot.val().trainDestination);
+    console.log(childSnapshot.val().trainTime);
+    console.log(childSnapshot.val().trainFrequency);
+
+    $("#train-data").append("<tr><td>"+ trainName +"</td><td>" + trainDestination + "</td><td>" + trainFrequency + "</td><td>" + trainTime + "</td><td>minutes away</td></tr>");
+
+});

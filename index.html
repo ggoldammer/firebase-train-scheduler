@@ -22,35 +22,39 @@
             <div class="card-header">
                 <h5>Current Train Schedule</h5>
             </div>
-            <table class="table">
-                <tr>
-                    <th>Train Name</th>
-                    <th>Destination</th>
-                    <th>Frequency(min)</th>
-                    <th>Next Arrival</th>
-                    <th>Minutes Away</th>
-                </tr>
-                <tr id="train-data">
+            <div>
+                <table class="table" id="train-data">
+                    <tr>
+                        <th>Train Name</th>
+                        <th>Destination</th>
+                        <th>Frequency(min)</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                    </tr>
 
-                </tr>
-            </table>
+                </table>
+            </div>
+
         </section>
 
         <section class="card container container-fluid">
             <div class="card-header">
                 <h5>Add a Train</h5>
             </div>
-            <form class="form-group">
-                <label for="train-name"> Train Name:</label>
-                <input type="text" id="train-name" class="form-control">
-                <label for="destination"> Destination:</label>
-                <input type="text" id="train-destination" class="form-control">
-                <label for="train-time"> First Train Time (HH:mm - Military Time):</label>
-                <input type="text" id="train-time" class="form-control">
-                <label for="train-frequency"> Frequency (Min):</label>
-                <input type="text" id="train-frequency" class="form-control">
-                <button id="add-train" class="btn btn-primary">Add Train</button>
-            </form>
+            <div>
+                <form class="form-group">
+                    <label for="train-name"> Train Name:</label>
+                    <input type="text" id="train-name" class="form-control">
+                    <label for="destination"> Destination:</label>
+                    <input type="text" id="train-destination" class="form-control">
+                    <label for="train-time"> First Train Time (HH:mm - Military Time):</label>
+                    <input type="text" id="train-time" class="form-control">
+                    <label for="train-frequency"> Frequency (Min):</label>
+                    <input type="text" id="train-frequency" class="form-control">
+                    <button id="add-train" class="btn btn-primary">Add Train</button>
+                </form>
+            </div>
+
         </section>
     </main>
 

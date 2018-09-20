@@ -1,19 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    
+    <header class="container container-fluid jumbotron text-center">
+        <h1>Anytime is Train Time</h1>
+        <h4>Choo choo. Chee Chee.</h4>
+    </header>
+
+    <main class="container">
+        <section class="card container container-fluid">
+            <div class="card-header">
+                <h5>Current Train Schedule</h5>
+            </div>
+            <table class="table">
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency(min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+                <tr id="train-data">
+
+                </tr>
+            </table>
+        </section>
+
+        <section class="card container container-fluid">
+            <div class="card-header">
+                <h5>Add a Train</h5>
+            </div>
+            <form class="form-group">
+                <label for="train-name"> Train Name:</label>
+                <input type="text" id="train-name" class="form-control">
+                <label for="destination"> Destination:</label>
+                <input type="text" id="train-destination" class="form-control">
+                <label for="train-time"> First Train Time (HH:mm - Military Time):</label>
+                <input type="text" id="train-time" class="form-control">
+                <label for="train-frequency"> Frequency (Min):</label>
+                <input type="text" id="train-frequency" class="form-control">
+                <button id="add-train" class="btn btn-primary">Add Train</button>
+            </form>
+        </section>
+    </main>
 
 
     <!-- CDN and JS file -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
     <script src="assets/js/javascript.js"></script>
 </body>
+
 </html>

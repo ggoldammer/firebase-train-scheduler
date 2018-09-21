@@ -14,6 +14,9 @@ var trainDestination = "";
 var trainTime = "";
 var trainFrequency = "";
 var dataRef = firebase.database();
+var now = moment().format("HH:mm");
+var nextArrival;
+
 
 //   I need  to save Input information to the databse
 $("#add-train").on("click", function (event) {
@@ -22,25 +25,27 @@ $("#add-train").on("click", function (event) {
     trainName = $("#train-name").val().trim();
     trainDestination = $("#train-destination").val().trim();
     trainTime = $("#train-time").val().trim();
+    moment(trainTime, "HH:mm");
     trainFrequency = $("#train-frequency").val().trim();
-
+    moment(trainFrequency, "mm");
 
     dataRef.ref().push({
-        "train-name": trainName,
-        "train-destination": trainDestination,
-        "train-time": trainTime,
-        "train-frequency": trainFrequency
+        name: trainName,
+        destination: trainDestination,
+        time: trainTime,
+        frequency: trainFrequency
     });
 });
 
 // I need to display recent input to the Current Train Schedule
 
-dataRef.ref().on("child_added", function(childSnapshot){
-    console.log(childSnapshot.val().trainName);
-    console.log(childSnapshot.val().trainDestination);
-    console.log(childSnapshot.val().trainTime);
-    console.log(childSnapshot.val().trainFrequency);
+dataRef.ref().on("child_added", function (snapshot) {
+    console.log(snapshot.val().name);
+    console.log(snapshot.val().destination);
+    console.log(snapshot.val().time);
+    console.log(snapshot.val().frequency);
+    console.log("Next Arrival:" + nextArrival);
 
-    $("#train-data").append("<tr><td>"+ trainName +"</td><td>" + trainDestination + "</td><td>" + trainFrequency + "</td><td>" + trainTime + "</td><td>minutes away</td></tr>");
+    $("#train-data").append("<tr><td>" + snapshot.val().name + "</td><td>" + snapshot.val().destination + "</td><td>" + snapshot.val().time + "</td><td>Work in Progress!</td><td>Work in Progress!</td></tr>");
 
 });

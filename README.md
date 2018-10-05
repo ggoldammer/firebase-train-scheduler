@@ -6,6 +6,8 @@ This train scheduler allows a user to input the name of a train, the arrival tim
 
 This was a Firebase project for the University of Arizona Coding Bootcamp.
 
+View Here: https://ggoldammer.github.io/firebase-train-scheduler/
+
 ## Technologies Used
 
 - Hypertext Markup Language (HTML)
